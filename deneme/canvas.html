@@ -1,0 +1,54 @@
+<html>
+<head>
+   <title>İlk Canvas API Uygulaması</title> 
+   <meta charset="utf-8" />
+</head>
+<body>
+
+  <canvas id="canvascik" width="600" height= "500">
+    Tarayıcı <canvas> elementini desteklemiyor
+	
+  </canvas>
+	
+  <script type="text/javascript">
+
+  
+        var canvas = document.getElementById("canvascik");
+        var icrk = canvas.getContext("2d");
+
+        // yüz 
+        icrk.beginPath();
+        icrk.arc(100, 100, 75, 0, 2 * Math.PI,false);
+        icrk.lineWidth = 5;
+        icrk.stroke();
+		
+		// ten rengi
+        var circle = new Path2D();
+        circle.arc(100, 100, 75, 0, 2 * Math.PI);
+        icrk.fillStyle="#FFDABE"
+        icrk.fill(circle);
+
+        // gözler
+        icrk.beginPath();
+        icrk.arc(70, 80, 10, 0, 2 * Math.PI, false);
+        icrk.arc(130, 80, 10, 0, 2 * Math.PI, false);
+        icrk.fillStyle="#340FAB"
+        icrk.fill();
+
+        // ağız //mathpı tek ciziyor 2* deyince cember oluyor
+        icrk.beginPath();
+        icrk.arc(100, 110, 50, 0, Math.PI, false);
+        icrk.stroke();
+		
+		//sac // true yukarı dogru etti 
+		 icrk.beginPath();
+		 icrk.lineWidth=15
+        icrk.arc(100, 90, 75, 0,Math.PI, true);
+        icrk.stroke();
+  
+        
+        
+</script>
+
+</body>
+</html>
